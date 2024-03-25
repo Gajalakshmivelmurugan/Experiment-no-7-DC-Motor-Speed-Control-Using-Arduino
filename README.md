@@ -1,9 +1,9 @@
 ![image](https://github.com/vasanthkumarch/Experiment-no-7-DC-Motor-Speed-Control-Using-Arduino/assets/36288975/739cc470-48c8-4873-a730-6319b4afc602)
-###  DATE: 
+###  DATE: 25.03.2024
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT:
+###  NAME: V.Gajalakshmi
+###  ROLL NO :212223040047
+###  DEPARTMENT:computer science and engineering
 # Experiment-no-6-DC-Motor-Speed-Control-Using-Arduino
 ### AIM : To control the speed and the direction of a DC motor using L293D driver ic( H- bridge)
 
@@ -32,11 +32,39 @@ TABLE-01 EXITATION TABLE FOR H BRIDGE
 As shown in the circuit diagram we need only 3 Arduino terminal pins, pin 8 is for the push button which toggles the motor direction of rotation. Pins 9 and 10 are PWM signal outputs, at any time there is only 1 active PWM, this allows us to control the direction as well as the speed by varying the duty cycle of the PWM signal. The active PWM pin decides the motor direction of rotation (one at a time, the other output is logic 0).
 
 ### PROGRAM 
+```
+int enable=6;
+int input1=3;
+int input2=4;
+void setup()
+{
+  pinMode(enable, OUTPUT);
+  pinMode(input1, OUTPUT);
+  pinMode(input2, OUTPUT);
+}
+
+void loop()
+{
+  analogWrite(enable, 30);
+  delay(9000); 
+  digitalWrite(input1, HIGH);
+  digitalWrite(input2, LOW);
+  delay(7000);
+  digitalWrite(input1, LOW);
+  digitalWrite(input2, HIGH);
+  delay(7000);
+}
+```
 
 ### OUTPUT
+![11](https://github.com/Gajalakshmivelmurugan/Experiment-no-7-DC-Motor-Speed-Control-Using-Arduino/assets/144871940/90ecf585-eec1-4c41-bbbf-802a652b5b47)
+
+![22](https://github.com/Gajalakshmivelmurugan/Experiment-no-7-DC-Motor-Speed-Control-Using-Arduino/assets/144871940/92c9946c-7689-40b4-bbbe-2d647643a9a3)
 
 ### GRAPH AND TABULATION 
+![33](https://github.com/Gajalakshmivelmurugan/Experiment-no-7-DC-Motor-Speed-Control-Using-Arduino/assets/144871940/8af8108a-de75-461e-9780-c46462c360fa)
 
+![44](https://github.com/Gajalakshmivelmurugan/Experiment-no-7-DC-Motor-Speed-Control-Using-Arduino/assets/144871940/6ddf22a5-d485-4ef0-8bef-3cafe24f61b0)
 
 ![image](https://github.com/vasanthkumarch/Experiment-no-7-DC-Motor-Speed-Control-Using-Arduino/assets/36288975/07e9b28e-9a5b-47bd-a023-3c27fe00fb2b)
 
